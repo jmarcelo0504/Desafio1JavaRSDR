@@ -1,18 +1,43 @@
-## Getting Started
+# Desafio 1 - Rede Solidária de Doação e Reaproveitamento <Checkpoint 1>
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descrição do projeto 
+Este projeto foi feito em Java com o objetivo de criar um sistema simples de doação.
 
-## Folder Structure
+O sistema permite cadastrar:
 
-The workspace contains two folders by default, where:
+- `Doadores` 
+- `Beneficiários` 
+- `Itens para doação`
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Também é possível listar os dados cadastrados.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## O que foi utilizado
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- Java
+- Programação Orientada a Objetos (POO)
 
-## Dependency Management
+## Estrutura do Projeto
+```
+src/
+ ├─ model/
+ ├─ service/
+ └─ main.java
+```
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Funcionamento do Código
+
+O sistema roda no terminal com um menu, onde o usuário pode escolher as opções digitando números.
+
+Exemplo:
+
+1 - Cadastrar Doador  
+2 - Cadastrar Beneficiário  
+3 - Cadastrar Item  
+4 - Listar Doadores  
+5 - Listar Beneficiários  
+6 - Listar Itens  
+0 - Sair
+
+## Integrante
+
+`João Marcelo`

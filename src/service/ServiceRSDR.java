@@ -12,16 +12,16 @@ public class ServiceRSDR {
     private int idItem = 1;
 
 
-    public void cadastrarDoador(String nome, String tel, String email, String end) {
-        doadores.add(new Doador(idDoador++, nome, tel, email, end));
+    public void cadastrarDoador(String nome, String telefone, String email, String endereco) {
+        doadores.add(new Doador(idDoador++, nome, telefone, email, endereco));
     }
 
-    public void cadastrarBeneficiario(String nome, String tel, String email, String end, String tipo, int prioridade) {
-        beneficiarios.add(new Beneficiario(idBeneficiario++, nome, tel, email, end, tipo, prioridade));
+    public void cadastrarBeneficiario(String nome, String telefone, String email, String endereco, String tipo, int prioridade) {
+        beneficiarios.add(new Beneficiario(idBeneficiario++, nome, telefone, email, endereco, tipo, prioridade));
     }
 
-    public void cadastrarItem(String nome, String cat, String desc, int qtd, String estado) {
-        itens.add(new ItemDoacao(idItem++, nome, cat, desc, qtd, estado));
+    public void cadastrarItem(String nome, String categoria, String descricao, int quantidade, String estado) {
+        itens.add(new ItemDoacao(idItem++, nome, categoria, descricao, quantidade, estado));
     }
 
     public ArrayList<Doador> listarDoadores() {

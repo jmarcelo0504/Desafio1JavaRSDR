@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class main {
 
-    static Scanner sc = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
     static ServiceRSDR sistema = new ServiceRSDR();
 
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class main {
         int opcao;
 
         do {
-            System.out.println("\n=== SISTEMA DE DOAÇÃO ===");
+            System.out.println("\nSISTEMA DE DOAÇÃO");
             System.out.println("1 - Cadastrar Doador");
             System.out.println("2 - Cadastrar Beneficiário");
             System.out.println("3 - Cadastrar Item");
@@ -20,8 +20,8 @@ public class main {
             System.out.println("6 - Listar Itens");
             System.out.println("0 - Sair");
 
-            opcao = sc.nextInt();
-            sc.nextLine();
+            opcao = scanner.nextInt();
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1 -> cadastrarDoador();
@@ -30,7 +30,7 @@ public class main {
                 case 4 -> sistema.listarDoadores().forEach(System.out::println);
                 case 5 -> sistema.listarBeneficiarios().forEach(System.out::println);
                 case 6 -> sistema.listarItens().forEach(System.out::println);
-                case 0 -> System.out.println("Encerrando...");
+                case 0 -> System.out.println("Saindo do programa!");
                 default -> System.out.println("Opção inválida!");
             }
 
@@ -39,63 +39,63 @@ public class main {
 
     static void cadastrarDoador() {
         System.out.println("Nome:");
-        String nome = sc.nextLine();
+        String nome = scanner.nextLine();
 
         System.out.println("Telefone:");
-        String tel = sc.nextLine();
+        String telefone = scanner.nextLine();
 
         System.out.println("Email:");
-        String email = sc.nextLine();
+        String email = scanner.nextLine();
 
         System.out.println("Endereço:");
-        String end = sc.nextLine();
+        String endereco = scanner.nextLine();
 
-        sistema.cadastrarDoador(nome, tel, email, end);
+        sistema.cadastrarDoador(nome, telefone, email, endereco);
         System.out.println("Doador cadastrado!");
     }
 
     static void cadastrarBeneficiario() {
         System.out.println("Nome:");
-        String nome = sc.nextLine();
+        String nome = scanner.nextLine();
 
         System.out.println("Telefone:");
-        String tel = sc.nextLine();
+        String telefone = scanner.nextLine();
 
         System.out.println("Email:");
-        String email = sc.nextLine();
+        String email = scanner.nextLine();
 
         System.out.println("Endereço:");
-        String end = sc.nextLine();
+        String endereco = scanner.nextLine();
 
         System.out.println("Tipo:");
-        String tipo = sc.nextLine();
+        String tipo = scanner.nextLine();
 
         System.out.println("Prioridade:");
-        int prioridade = sc.nextInt();
-        sc.nextLine();
+        int prioridade = scanner.nextInt();
+        scanner.nextLine();
 
-        sistema.cadastrarBeneficiario(nome, tel, email, end, tipo, prioridade);
+        sistema.cadastrarBeneficiario(nome, telefone, email, endereco, tipo, prioridade);
         System.out.println("Beneficiário cadastrado!");
     }
 
     static void cadastrarItem() {
         System.out.println("Nome:");
-        String nome = sc.nextLine();
+        String nome = scanner.nextLine();
 
         System.out.println("Categoria:");
-        String cat = sc.nextLine();
+        String categoria = scanner.nextLine();
 
         System.out.println("Descrição:");
-        String desc = sc.nextLine();
+        String descricao = scanner.nextLine();
 
         System.out.println("Quantidade:");
-        int qtd = sc.nextInt();
-        sc.nextLine();
+        int quantidade = scanner.nextInt();
+        scanner.nextLine();
 
         System.out.println("Estado:");
-        String estado = sc.nextLine();
+        String estado = scanner.nextLine();
 
-        sistema.cadastrarItem(nome, cat, desc, qtd, estado);
+        sistema.cadastrarItem(nome, categoria, descricao, quantidade, estado);
         System.out.println("Item cadastrado!");
     }
 }
