@@ -38,6 +38,11 @@ Exemplo:
 6 - Listar Itens  
 0 - Sair
 
+## Diagrama de Classes
+
+<img width="907" height="625" alt="image" src="https://github.com/user-attachments/assets/8f4ad0cb-eb13-4cdf-9578-acb8cf596a38" />
+Arquivo gerado no site Lucidchart.
+
 ## Integrante
 
 `João Marcelo`
