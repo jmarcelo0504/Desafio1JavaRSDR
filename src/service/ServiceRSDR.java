@@ -6,10 +6,12 @@ public class ServiceRSDR {
     private ArrayList<Doador> doadores = new ArrayList<>();
     private ArrayList<Beneficiario> beneficiarios = new ArrayList<>();
     private ArrayList<ItemDoacao> itens = new ArrayList<>();
+    private ArrayList<Solicitacao> solicitacoes = new ArrayList<>();
 
     private int idDoador = 1;
     private int idBeneficiario = 1;
     private int idItem = 1;
+    private int idSolicitacao = 1;
 
 
     public void cadastrarDoador(String nome, String telefone, String email, String endereco) {

@@ -21,6 +21,28 @@ public class ItemDoacao {
         this.status = "Disponível";
     }
 
+
+     public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+
     @Override
     public String toString() {
         return "ID: " + id + ", Nome do Item: " + nome + ", Categoria: " + categoria + "Descrição: " + descricao +", Quantidade: " + quantidade + ", Data de Cadastro: " + dataCadastro + ", Status: " + status;
