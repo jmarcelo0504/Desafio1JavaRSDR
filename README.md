@@ -1,4 +1,4 @@
-# Desafio 1 - Rede Solidária de Doação e Reaproveitamento <Checkpoint 1>
+# Desafio 1 - Rede Solidária de Doação e Reaproveitamento <Checkpoint 2>
 
 ## Descrição do projeto 
 Este projeto foi feito em Java com o objetivo de criar um sistema simples de doação.
