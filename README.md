@@ -32,15 +32,15 @@ O sistema roda no terminal com um menu, onde o usuário pode escolher as opçõe
 
 Exemplo:
 
-1 - Cadastrar Doador  
-2 - Cadastrar Beneficiário  
-3 - Cadastrar Item  
-4 - Listar Doadores  
-5 - Listar Beneficiários  
-6 - Listar Itens  
-7 - Solicitar Item
-8 - Listar Solicitações
-0 - Sair
+1. - Cadastrar Doador  
+2. - Cadastrar Beneficiário  
+3. - Cadastrar Item  
+4. - Listar Doadores  
+5. - Listar Beneficiários  
+6. - Listar Itens  
+7. - Solicitar Item
+8. - Listar Solicitações
+0. - Sair
 
 ## Diagrama de Classes
 
