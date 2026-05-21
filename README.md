@@ -8,6 +8,7 @@ O sistema permite cadastrar:
 - `Doadores` 
 - `Beneficiários` 
 - `Itens para doação`
+- `Solicitações`
 
 Também é possível listar os dados cadastrados.
 
@@ -21,6 +22,7 @@ Também é possível listar os dados cadastrados.
 src/
  ├─ model/
  ├─ service/
+ ├─ util/
  └─ main.java
 ```
 
@@ -36,6 +38,8 @@ Exemplo:
 4 - Listar Doadores  
 5 - Listar Beneficiários  
 6 - Listar Itens  
+7 - Solicitar Item
+8 - Listar Solicitações
 0 - Sair
 
 ## Diagrama de Classes
