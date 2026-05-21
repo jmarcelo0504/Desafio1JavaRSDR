@@ -1,3 +1,5 @@
+package model;
+
 public class Usuario {
     protected int id;
     protected String nome;

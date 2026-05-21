@@ -1,3 +1,5 @@
+package model;
+
 public class Beneficiario extends Usuario {
     private String tipo;
     private int prioridade;
@@ -8,6 +10,7 @@ public class Beneficiario extends Usuario {
         this.prioridade = prioridade;
     }
 
+    @Override
     public String toString() {
         return super.toString() + ", Tipo: " + tipo + ", Prioridade: " + prioridade;
     }
