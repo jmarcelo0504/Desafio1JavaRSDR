@@ -1,53 +1,92 @@
-# Desafio 1 - Rede Solidária de Doação e Reaproveitamento <Checkpoint 2>
+# Rede Solidária de Doação e Reaproveitamento (RSDR)
 
-## Descrição do projeto 
-Este projeto foi feito em Java com o objetivo de criar um sistema simples de doação.
+Sistema de terminal em Java focado em sustentabilidade, reaproveitamento de recursos e impacto social. Permite o cadastro e controle de doadores, beneficiários, itens de doação, solicitações de itens e registro histórico de doações concluídas.
 
-O sistema permite cadastrar:
+---
 
-- `Doadores` 
-- `Beneficiários` 
-- `Itens para doação`
-- `Solicitações`
+## Compromisso com os Objetivos de Desenvolvimento Sustentável (ODS)
 
-Também é possível listar os dados cadastrados.
+Este projeto foi desenhado sob a perspectiva de impacto social direto e governança socioambiental, alinhando-se ativamente a quatro **Objetivos de Desenvolvimento Sustentável (ODS)** da Organização das Nações Unidas (ONU):
 
-## O que foi utilizado
+1. **ODS 1: Erradicação da Pobreza**
+   - _Ação Prática:_ O sistema facilita a identificação e ordenação de beneficiários sob vulnerabilidade crítica (famílias, ONGs, abrigos e escolas), canalizando suprimentos básicos e doações para quem mais precisa por meio de priorização dinâmica de atendimento.
+2. **ODS 2: Fome Zero e Agricultura Sustentável**
+   - _Ação Prática:_ Permite o gerenciamento e redirecionamento de excedentes de alimentos não-perecíveis e recursos essenciais, evitando o desperdício e fortalecendo redes de segurança alimentar.
 
-- Java
-- Programação Orientada a Objetos (POO)
+3. **ODS 10: Redução das Desigualdades**
+   - _Ação Prática:_ A lógica do sistema implementa o algoritmo de comparação (`Comparable`), priorizando automaticamente beneficiários de acordo com critérios objetivos de prioridade de vulnerabilidade (escala de 1 a 5), garantindo justiça e equidade na distribuição.
+
+4. **ODS 12: Consumo e Produção Responsáveis**
+   - _Ação Prática:_ Fomenta a economia circular por meio da logística reversa e reaproveitamento de itens usados/semi-novos (móveis, roupas, eletrônicos), reduzindo a extração de matéria-prima e a geração de resíduos sólidos em aterros.
+
+---
+
+## Arquitetura e Tecnologia Utilizada
+
+- **Linguagem:** Java 17+
+- **Paradigma de Programação:** Orientação a Objetos (POO) com herança, polimorfismo, interfaces de comparação e encapsulamento estrito.
+- **Persistência Relacional:** SQLite (banco de dados local baseado em arquivo `rsdr_db.db`), rodando de forma 100% embarcada e independente de servidores rodando em background.
+- **Acesso ao Banco:** Conector JDBC nativo (através de `DatabaseConnection`).
+- **Gerenciador de Build:** Maven (`pom.xml`).
+
+---
 
 ## Estrutura do Projeto
-```
+
+```text
 src/
+ ├─ main/
+ │   └─ Main.java
  ├─ model/
+ │   ├─ Beneficiario.java
+ │   ├─ Doador.java
+ │   ├─ Usuario.java
+ │   ├─ ItemDoacao.java
+ │   ├─ Solicitacao.java
+ │   ├─ DoacaoEfetivada.java
+ │   ├─ StatusItem.java
+ │   ├─ StatusSolicitacao.java
+ │   └─ TipoBeneficiario.java
+ ├─ repository/
+ │   ├─ UsuarioRepository.java
+ │   ├─ ItemRepository.java
+ │   ├─ SolicitacaoRepository.java
+ │   └─ DoacaoRepository.java
  ├─ service/
+ │   └─ ServiceRSDR.java
  ├─ util/
- └─ main.java
+ │   ├─ DatabaseConnection.java    ]
+ │   ├─ DatabaseInitializer.java   ]
+ │   ├─ Entrada.java
+ │   ├─ Menu.java
+ │   └─ Validacao.java
+ └─ db.properties
 ```
 
-## Funcionamento do Código
+---
 
-O sistema roda no terminal com um menu, onde o usuário pode escolher as opções digitando números.
+## Funcionamento do Terminal
 
-Exemplo:
+O terminal conta com as seguintes opções:
 
-1. - Cadastrar Doador  
-2. - Cadastrar Beneficiário  
-3. - Cadastrar Item  
-4. - Listar Doadores  
-5. - Listar Beneficiários  
-6. - Listar Itens  
-7. - Solicitar Item
-8. - Listar Solicitações
-0. - Sair
+1. **Cadastrar Doador**: Lê nome, telefone (validado), e-mail (validado) e endereço.
+2. **Cadastrar Beneficiário**: Permite selecionar tipos específicos e prioridades.
+3. **Cadastrar Item de Doação**: Cadastra nome, categoria, descrição, quantidade e estado.
+4. **Listar Doadores**: Exibe todos os doadores.
+5. **Listar Beneficiários**: Exibe a lista ordenada por prioridade (urgência).
+6. **Listar Itens**: Exibe todos os itens e seus status atuais.
+7. **Filtrar Itens**: Exibe os itens de acordo com o status selecionado.
+8. **Solicitar Item**: Cria solicitação pendente validando a quantidade do estoque.
+9. **Listar Solicitações**: Exibe o status de cada solicitação.
+10. **Aprovar Solicitação**: Deduz o estoque do item. Se zerado, muda o status do item para `RESERVADO`.
+11. **Concluir Entrega**: Registra a doação efetivada no histórico e atualiza o item para `ENTREGUE`.
+12. **Relatório de Doações Efetivadas**: Mostra o histórico de todas as doações finalizadas.
+13. **Rejeitar/Cancelar Solicitação**: Atualiza o status para `REJEITADA` e libera a reserva do estoque de volta ao item.
 
-## Diagrama de Classes
+    0 . **Sair**: Fecha conexões e finaliza a aplicação.
 
-<img width="907" height="625" alt="image" src="https://github.com/user-attachments/assets/8f4ad0cb-eb13-4cdf-9578-acb8cf596a38" />
-
-*Arquivo gerado no site Lucidchart.*
+---
 
 ## Integrante
 
-`João Marcelo`
+João Marcelo
